@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成都市互联网协会</title>
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+</head>
+
+
+<style>
+    /* 导航 */
+    .logo .active a:active, .logo .active a:link, .logo .active a:visited{color: black; text-decoration: none;}
+    .logo .active a:hover{border: 1px dashed grey;color: aqua;}
+    .logo ul{display:inline;list-style-type: none; float: right; margin-right: 30px;}
+    .logo ul li{display: inline; margin: 10px;}
+    /* 导航 */
+
+    /* 轮播 */
+    @keyframes pic-slide{
+        from{margin-left: 0px;}
+        50%{margin-left: -900px;}
+        to{margin-left: -1800px;}
+    }
+    .play{
+        width: 3600px;
+        height: 400px;
+        text-align: center;
+        overflow: hidden;
+        animation: pic-slide;
+        animation-duration:10s;
+        animation-iteration-count: infinite;
+        animation-direction:alternate;
+        border-top: 5px grey solid;
+        border-bottom: 5px grey solid;
+    }
+    .play img{width: 900px; height: 400px;}
+    
+    @keyframes dot-slide1{
+        from{background-color: orange;}
+        50%{background-color: unset}
+        to{background-color: unset;}
+    }
+
+    @keyframes dot-slide2{
+        from{background-color: unset;}
+        50%{background-color: orange;}
+        to{background-color: unset;}
+    }
+
+    @keyframes dot-slide3{
+        from{background-color: unset;}
+        50%{background-color: unset;}
+        to{background-color: orange;}
+    }
+
+    .dot1{
+        animation: dot-slide1;
+        animation-duration:10s;
+        animation-iteration-count: infinite;
+        animation-direction:alternate;
+    }
+
+    .dot2{
+        animation: dot-slide2;
+        animation-duration:10s;
+        animation-iteration-count: infinite;
+        animation-direction:alternate;
+    }
+
+    .dot3{
+        animation: dot-slide3;
+        animation-duration:10s;
+        animation-iteration-count: infinite;
+        animation-direction:alternate;
+    }
+    .dot{
+        border-radius: 100px;
+    }
+    /* 轮播 */
+
+    /* 社会动态 */
+    .so{padding-bottom: 30px;}
+    .so img{width: 200px; height: 100px; transition: all 0.6s;}
+    .so img:hover{transform: scale(1.2,1.2);}
+    /* 社会动态 */
+
+    /* “更多信息”按钮 */
+    .info{
+        background-color: cornflowerblue;
+        border-radius: 25px;
+        width: 150px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        margin-left: 45.5%;
+        }
+    .info a{
+        color: white;
+        text-decoration: none;
+    }
+    .info:hover{background-color: rgb(76, 76, 245);}
+    /* “更多信息”按钮 */
+
+    /* 表格内图片放大 */
+    .div_img{height: 100px;width: 200px; overflow: hidden;}
+    /* 表格内图片放大 */
+
+    /* 新闻资讯 */
+    .news img{width: 200px; height: 100px; transition: all 0.6s;}
+    .news img:hover{transform: scale(1.2,1.2);}
+    .news .post{
+        font-size: 13px;
+        color: grey;
+    }
+    /* 新闻资讯 */
+
+    /* 协会联系信息 */
+    .commu{
+        background-color: rgb(218,216,216);
+        padding: 60px;
+    }
+    .commu img{height: 25%; width: 25%;}
+    .commu td:hover{transform: scale(1.1,1.1);}
+    .commu td{
+        transition: all 0.6s;
+        text-align: center;
+        font-weight: bold;
+    }
+    /* 协会联系信息 */
+
+    /* 合作伙伴 */
+    .part_cont{
+        padding: 60px;
+    }
+    .part_cont img{transition: all 0.6s;}
+    .part_cont img:hover{transform: scale(1.1,1.1);}
+    .swiper-slide{
+        text-align: center;
+    }
+    .part_dot_style{
+        background: orange;
+        opacity: 1;
+    }
+    /* 合作伙伴 */
+
+    /* 版权信息 */
+    .right{
+        background-color: #0089FF;
+        padding: 70px;
+        }
+    .right table{
+        margin: auto;
+    }
+    .right table td{
+        width: 300px;
+        color: white;
+        float: left;
+        margin-right: 100px;
+    }
+    .right .title{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .right hr{
+        color: white;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .right .contact{
+        font-size: 14px;
+    }
+    .right .org{
+        font-size: 17px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    .right img{transition: all 0.6s;}
+    .right img:hover{transform: scale(1.1,1.1);}
+    .right a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .bottom{
+        text-align: center;
+        margin: 5px;
+        font-size: 10px;
+        color: grey;
+    }
+    /* 版权信息 */
+</style>
+
+
+<body>
+
+<!-- 导航 -->
+    <div style="height: 100px; line-height: 100px;" class="logo">
+        <img src="images3/logo.png" width="260px" style="vertical-align: middle; margin-left: 30px; display: inline;">
+        <ul>
+            <li class="active"><a href="#">首页</a></li>
+            <li class="active"><a href="#">协会动态</a></li>
+            <li class="active"><a href="#">会员中心</a></li>
+            <li class="active"><a href="#">互联网+</a></li>
+            <li class="active"><a href="#">行业政策</a></li>
+            <li class="active"><a href="#">成都市互联网研究院</a></li>
+            <li class="active"><a href="#">关于协会</a></li>
+        </ul>
+    </div>
+<!-- 导航 -->
+
+<!-- 轮播 -->
+    <div class="play">
+        <img src="images3/t3_pic_1.jpg">
+        <img src="images3/t3_pic_2.jpg">
+        <img src="images3/t3_pic_3.jpg">
+    </div>
+    <div style="text-align: center;">
+        <span class="dot1 dot">&nbsp;1&nbsp;</span>
+        <span class="dot2 dot">&nbsp;2&nbsp;</span>
+        <span class="dot3 dot">&nbsp;3&nbsp;</span>
+    </div>
+<!-- 轮播 -->
+
+<!-- 社会动态 -->
+    <hr style="color: grey; margin-top: 70px; margin-bottom: 30px; width: 70%;">
+    <div style="color: rgb(68, 68, 228); text-align: center;">
+        <h1>协会动态</h1>
+        <h3>Association dynamics</h3>
+    </div>
+    <hr style="color: grey; margin-top: 30px; margin-bottom: 30px; width: 70%;">
+    <div class="so">
+        <table align="center" cellpadding="10px">
+            <tr>
+                <td> <div class="div_img"><img src="images3/t3_1.png"></div> <div>协会受邀参加易创...</div></td>
+                <td> <div class="div_img"><img src="images3/t3_2.png"></div> <div>九寨沟300万斤脆红...</div></td>
+                <td> <div class="div_img"><img src="images3/t3_3.jpg"></div> <div>第四十二期天府IT沙龙“互...</div></td>
+                <td> <div class="div_img"><img src="images3/t3_4.jpg"></div> <div>协会与猪八戒网...</div></td>
+            </tr>
+            <tr>
+                <td> <div class="div_img"><img src="images3/t3_5.jpg"></div> <div>中山大学副院长...</div></td>
+                <td> <div class="div_img"><img src="images3/t3_6.jpg"></div> <div>推进成都互联网行业“独角...</div></td>
+                <td> <div class="div_img"><img src="images3/t3_7.jpg"></div> <div>为企业成功助力————...</div></td>
+                <td> <div class="div_img"><img src="images3/t3_8.jpg"></div> <div>协会受邀参加“2017...</div></td>
+            </tr>
+        </table>
+        <div class="info"><a href="#">更多信息</a></div>
+    </div>
+<!-- 社会动态 -->
+
+<!-- 新闻资讯 -->
+    <div style="padding-top: 10px; padding-bottom: 30px; background-color: rgb(240, 240, 240);">
+        <hr style="color: grey; margin-top: 70px; margin-bottom: 30px; width: 70%;">
+        <div style="color: rgb(68, 68, 228); text-align: center;">
+            <h1>新闻资讯</h1>
+            <h3>News Information</h3>
+        </div>
+        <hr style="color: grey; margin-top: 30px; margin-bottom: 30px; width: 70%;">
+        <div class="news">
+            <table align="center" cellpadding="10px">
+                <tr>
+                    <td> <div class="div_img"><img src="images3/txw3_1.png"></div> <div>“共享农业”：不一样的...</div> <div class="post">发布时间:2017-08-25 09:28</div></td>
+                    <td> <div class="div_img"><img src="images3/txw3_2.jpg"></div> <div>共享云推动社交电商崛起</div> <div class="post">发布时间:2017-08-23 09:44</div></td>
+                    <td> <div class="div_img"><img src="images3/txw3_3.jpg"></div> <div>WISEx新共享行业峰会...</div> <div class="post">发布时间:2017-08-22 17:51</div></td>
+                    <td> <div class="div_img"><img src="images3/txw3_4.jpg"></div> <div>国泛互联网企业迎来...</div> <div class="post">发布时间:2017-08-22 11:48</div></td>
+                </tr>
+                <tr>
+                    <td> <div class="div_img"><img src="images3/txw3_5.jpg"></div> <div>农村电商20年：农民...</div> <div class="post">发布时间:2017-08-22 10:14</div></td>
+                    <td> <div class="div_img"><img src="images3/txw3_6.jpg"></div> <div>慧博科技CEO张学峰...</div> <div class="post">发布时间:2017-08-21 16:20</div></td>
+                    <td> <div class="div_img"><img src="images3/txw3_7.jpg"></div> <div>“绿色+智能”成制造业...</div> <div class="post">发布时间:2017-08-18 15:47</div></td>
+                    <td> <div class="div_img"><img src="images3/txw3_8.jpg"></div> <div>用“互联网+”重塑农业...</div> <div class="post">发布时间:2017-08-18 15:28</div></td>
+                </tr>
+            </table>
+            <div class="info"><a href="#">更多信息</a></div>
+        </div>
+    </div>
+<!-- 新闻资讯 -->
+
+<!-- 协会联系信息 -->
+    <div class="commu">
+        <table align="center" cellpadding="10px">
+            <tr>
+                <td>
+                    <img src="images3/ticon3_1.png">
+                    <div>协会规章</div>
+                    <div>association system</div>
+                </td>
+                <td>
+                    <img src="images3/ticon3_2.png">
+                    <div>申请入会</div>
+                    <div>Apply for membership</div>
+                </td>
+                <td>
+                    <img src="images3/ticon3_3.png">
+                    <div>组织架构</div>
+                    <div>Organizational</div>
+                </td>
+                <td>
+                    <img src="images3/ticon3_4.png">
+                    <div>联系我们</div>
+                    <div>Contact us</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+<!-- 协会联系信息 -->
+
+<!-- 合作伙伴 -->
+    <div style="text-align: center;">
+        <h1>合作伙伴</h1>
+        <h3>Partner</h3>
+    </div>
+    <hr style="color: grey; width: 70%;">
+    <div class="swiper-container part_cont">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images3/tf3_1.jpg">
+                <img src="images3/tf3_2.jpg">
+                <img src="images3/tf3_3.jpg">
+                <img src="images3/tf3_4.jpg">
+                <img src="images3/tf3_5.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="images3/tf3_6.jpg">
+            </div>
+        </div>
+        <div class="swiper-pagination part_dot"></div>
+    </div>
+
+
+    <script src="swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.part_cont', {
+        autoplay:true,
+        speed:1000,
+        pagination: {
+            el: '.part_dot',
+            clickable: true,
+            bulletActiveClass: 'part_dot_style',
+        },
+        });
+    </script>
+
+<!-- 合作伙伴 -->
+
+<!-- 版权信息 -->
+    <div class="right">
+        <table>
+            <tr>
+                <td>
+                    <div class="title">联系我们</div>
+                    <hr>
+                    <div class="org">成都市互联网协会</div>
+                    <div class="contact">
+                        <div>联系电话：028-85321197</div>
+                        <div>QQ：2639158356/2832787567</div>
+                        <div>邮箱：iscd@iscd.org.cn</div>
+                        <div>地址：成都市高新区天府五街200号箐蓉广场A1/6楼第五维空间</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="title">友情链接</div>
+                    <hr>
+                    <div><a href="#">地联科技</a></div>
+                </td>
+                <td style="margin: initial;text-align: center;">
+                    <div>
+                        <img src="images3/twx3_1.jpg">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="bottom">
+        &copy;成都市互联网协会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;蜀ICP备13002747号-1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;技术支持：竹子建站
+    </div>
+<!-- 版权信息 -->
+</body>
+</html>
